@@ -5,11 +5,14 @@ import Footer from './components/Footer';
 
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    scrollBehavior: 'smooth',
+  },
   container: {
     height: 'calc(100vh - 64px)',
     marginTop: 64,
     background: 'black',
-    color: 'white'
+    opacity: 0.3
   },
 }));
 
@@ -17,7 +20,7 @@ export default function App() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <NavBar />
         <div className={classes.container}></div>
       <Footer />
