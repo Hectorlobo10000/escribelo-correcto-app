@@ -1,4 +1,4 @@
-import { SIGNIN } from './actionTypes';
+import { SIGNIN } from '../actions/actionTypes';
 
 const loggedReducer = (state = false, action) => {
   switch (action.type) {

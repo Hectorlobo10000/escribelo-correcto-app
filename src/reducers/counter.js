@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from './actionTypes';
+import { INCREMENT, DECREMENT } from '../actions/actionTypes';
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {

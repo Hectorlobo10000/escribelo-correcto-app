@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, isLogged } from './actions';
 
 const useStyles = makeStyles({
   root: {
@@ -23,11 +24,14 @@ const useStyles = makeStyles({
 export default function App() {
   const classes = useStyles();
   const counter = useSelector(state => state.counter);
+  const dispatch = useDispatch();
 
   return (
     <div className={classes.root}>
       <NavBar />
       <div className={classes.container}>
+        <button onClick={() => dispatch(increment())}>+</button>
+        <button onClick={() => dispatch(decrement())}>-</button>
         <h3>Counter {counter}</h3>
       </div>
       <Footer />
