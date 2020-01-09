@@ -1,78 +1,36 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import { useSelector } from 'react-redux';
 
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     scrollBehavior: 'smooth',
   },
   container: {
-    height: 'calc(100vh - 64px)',
-    marginTop: 64,
+    /* height: 'calc(100vh - 64px)', */
+    height: '100vh',
+    /* marginTop: 64, */
+    marginTop: 0,
+    paddingTop: 100,
     background: 'black',
-    opacity: 0.3
+    opacity: 0.3,
+    color: 'white',
   },
-}));
+});
 
 export default function App() {
   const classes = useStyles();
+  const counter = useSelector(state => state.counter);
 
   return (
     <div className={classes.root}>
       <NavBar />
-        <div className={classes.container}></div>
+      <div className={classes.container}>
+        <h3>Counter {counter}</h3>
+      </div>
       <Footer />
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
- */
