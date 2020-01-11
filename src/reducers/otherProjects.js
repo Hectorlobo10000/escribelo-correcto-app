@@ -45,8 +45,8 @@ const projects = [
   { name: 'Mickyandonie', link: 'http://www.mickyandonie.com/' },
 ];
 
-const otherProjects = (state = projects, action) => {
+const otherProjectsReducer = (state = projects, action) => {
   return state;
 };
 
-export default otherProjects;
+export default otherProjectsReducer;
